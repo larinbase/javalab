@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "ru.kpfu.itis.eventservice.proto";
+option java_multiple_files = true;
+
+
+service EventServiceGrpc {
+  rpc getEventsByUserId(UserRequest) returns (UserResponse) {}
+}
+
+message UserRequest {
+  int32 id = 1;
+}
+
+message UserResponse {
+  repeated string events = 1;
+}
